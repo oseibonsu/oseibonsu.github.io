@@ -1,7 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Austin Zouk</title>
+  </head>
   <body>
-    <h1>ATX Zouk</h1>
-    <iframe src="https://calendar.google.com/calendar/embed?src=536e838898ffa634b8b9c1ff5e9150a918019cc963a6b75eab7b3f7c65a612c9%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <h1>Austin Zouk Calendar</h1>
+    <div id="calendar"></div>
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src=536e838898ffa634b8b9c1ff5e9150a918019cc963a6b75eab7b3f7c65a612c9%40group.calendar.google.com&ctz=America%2FChicago"
+      style="border: 0"
+      width="800"
+      height="600"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+    <link href="./main.css" rel="stylesheet" />
+    <script src="./main.js"></script>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          googleCalendarApiKey: "AIzaSyCqAHI1qk4jiBO0qWM-RpZZJON5vmU2q-E",
+          eventSources: [
+            {
+              googleCalendarId:
+                "536e838898ffa634b8b9c1ff5e9150a918019cc963a6b75eab7b3f7c65a612c9@group.calendar.google.com",
+              color: "orange",
+            }
+          ],
+        });
+
+        calendar.render();
+      });
+    </script>
   </body>
 </html>
